@@ -1,15 +1,13 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FirstTest {
+public class Main {
 
-    @Test
-    public void firstTest() {
+    public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
 
-        driver.get("https://demoqa.com/");
-    }
+        driver.get("https://google.com/");
 
+    }
 }
