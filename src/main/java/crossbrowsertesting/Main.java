@@ -21,6 +21,7 @@ public class Main {
             WebElement element2 = driver.findElement(By.id("droppable"));
             Actions actions = new Actions(driver);
             actions.moveToElement(element1).clickAndHold().moveToElement(element2).release().build().perform();
+            Thread.sleep(3000);
 
 
         } catch (InterruptedException e) {
