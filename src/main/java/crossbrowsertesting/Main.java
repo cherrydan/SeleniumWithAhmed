@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
 
@@ -20,14 +20,19 @@ public class Main {
             WebElement element1 = driver.findElement(By.id("draggable"));
             WebElement element2 = driver.findElement(By.id("droppable"));
             Actions actions = new Actions(driver);
-            actions.moveToElement(element1).clickAndHold().moveToElement(element2).release().build().perform();
-            Thread.sleep(3000);
+            //не забывать вызывать метод perform()
+
+            actions.dragAndDrop(element1, element2).perform();
+            Thread.sleep(1000);
+            actions.dragAndDropBy(element1, 300, 300).perform();
+
 
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         finally {
+            Thread.sleep(10000);
             driver.quit();
         }
 
