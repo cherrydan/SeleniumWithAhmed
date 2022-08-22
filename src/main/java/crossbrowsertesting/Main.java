@@ -22,9 +22,9 @@ public class Main {
             Actions actions = new Actions(driver);
             //не забывать вызывать метод perform()
 
-            actions.dragAndDrop(element1, element2).perform();
-            Thread.sleep(1000);
-            actions.dragAndDropBy(element1, 300, 300).perform();
+            actions.dragAndDrop(element1, element2).pause(1000).perform();
+            // Использование метода pause()
+            actions.dragAndDropBy(element1, 300, 300).pause(1000).perform();
 
 
 
