@@ -28,7 +28,8 @@ public class AssertTest {
 
         String text = element1.getText();
 
-        Assert.assertEquals(text, "Личные вещи ");
+        Assert.assertEquals(text, "Личные вещи "); //именно с пробелом
+
 
         driver.quit();
     }
