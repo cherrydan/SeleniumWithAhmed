@@ -6,17 +6,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class AssertTest {
 
+    private static ChromeDriver driver;
+
+    @BeforeTest
+    public static void init() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+    }
+
     @Test
 
     public static void assertTest() {
-        WebDriverManager.chromedriver().setup();
-        ChromeDriver driver = new ChromeDriver();
 
 
         //устанавливаем неявное ожидание
